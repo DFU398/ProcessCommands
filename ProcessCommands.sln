@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{1B6E08BE-FA24-4675-A258-9188E94FBEC3}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+		run-unit-tests.sh = run-unit-tests.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{43A99FDE-97D7-4FB4-A466-F72D1DC153DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{D4E1224A-71F2-4338-B6A2-93350AD88B52}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\tests.yml = .github\workflows\tests.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "actions", "actions", "{A5B36051-1254-4927-8950-07F553BD9B47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "run-unit-tests", "run-unit-tests", "{CAA6AEB9-CF40-4C29-B801-E7E6D040285A}"
+	ProjectSection(SolutionItems) = preProject
+		.github\actions\run-unit-tests\action.yml = .github\actions\run-unit-tests\action.yml
+		.github\actions\run-unit-tests\Dockerfile = .github\actions\run-unit-tests\Dockerfile
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ProcessCommands", "ProcessCommands\ProcessCommands.fsproj", "{FE8BB13E-193C-4A2A-842D-813C03463E62}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Test.ProcessCommands", "Test.ProcessCommands\Test.ProcessCommands.fsproj", "{B31A5F56-9225-45C7-8C47-11D33660CB23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE8BB13E-193C-4A2A-842D-813C03463E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8BB13E-193C-4A2A-842D-813C03463E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8BB13E-193C-4A2A-842D-813C03463E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8BB13E-193C-4A2A-842D-813C03463E62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B31A5F56-9225-45C7-8C47-11D33660CB23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31A5F56-9225-45C7-8C47-11D33660CB23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31A5F56-9225-45C7-8C47-11D33660CB23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31A5F56-9225-45C7-8C47-11D33660CB23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4E1224A-71F2-4338-B6A2-93350AD88B52} = {43A99FDE-97D7-4FB4-A466-F72D1DC153DA}
+		{A5B36051-1254-4927-8950-07F553BD9B47} = {43A99FDE-97D7-4FB4-A466-F72D1DC153DA}
+		{CAA6AEB9-CF40-4C29-B801-E7E6D040285A} = {A5B36051-1254-4927-8950-07F553BD9B47}
+	EndGlobalSection
+EndGlobal
