@@ -1,3 +1,4 @@
+[![NuGet Version](https://img.shields.io/nuget/v/ProcessCommands)](https://www.nuget.org/packages/ProcessCommands)
 ![Tests](https://github.com/DFU398/ProcessCommands/actions/workflows/tests.yml/badge.svg?branch=main)
 [![EO principles respected here](http://www.elegantobjects.org/badge.svg)](http://www.elegantobjects.org)
 
