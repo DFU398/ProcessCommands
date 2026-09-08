@@ -1,0 +1,28 @@
+<Project DefaultTargets="Build">
+    <Target Name="PrepareSolution">
+        <!-- This needs to be done before Clean or else the Clean target fails with "error NETSDK1064: Package FSharp.Core, version 8.0.102 was not found." -->
+        <Exec Command="dotnet restore ProcessCommands.sln" />
+    </Target>
+    
+    <Target Name="Clean" DependsOnTargets="PrepareSolution">
+        <Message Importance="high" Text="#################### Clean: ####################" />
+        <RemoveDir Directories="./artifacts" />
+        <MSBuild Projects="ProcessCommands/ProcessCommands.fsproj;Test.ProcessCommands/Test.ProcessCommands.fsproj" Targets="Clean" />
+    </Target>
+    
+    <Target Name="Build" DependsOnTargets="Clean">
+        <Message Importance="high" Text="#################### Build: ####################" />
+        <MSBuild Projects="ProcessCommands/ProcessCommands.fsproj" Targets="Build" />
+    </Target>
+
+    <Target Name="Test" DependsOnTargets="Build">
+        <Message Importance="high" Text="#################### Test: ####################" />
+        <MSBuild Projects="Test.ProcessCommands/Test.ProcessCommands.fsproj" Targets="VSTest" />
+    </Target>
+
+    <Target Name="Pack" DependsOnTargets="Test">
+        <Message Importance="high" Text="#################### Pack: ####################" />
+        <MakeDir Directories="artifacts" />
+        <MSBuild Projects="ProcessCommands/ProcessCommands.fsproj" Targets="Pack" Properties="PackageOutputPath=../artifacts/" />
+    </Target>
+</Project>
