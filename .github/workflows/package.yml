@@ -22,9 +22,9 @@ jobs:
         shell: bash
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            VERSION = "${{ inputs.version }}"
+            VERSION="${{ inputs.version }}"
           else
-            VERSION = "${{ github.ref_name }}"
+            VERSION="${{ github.ref_name }}"
           fi
           echo "version=$VERSION" | tee --append "$GITHUB_OUTPUT"
         
