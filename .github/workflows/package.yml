@@ -1,0 +1,43 @@
+name: Package
+on:
+  push:
+    tags:
+      - '*.*.*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: The version to use for the new package.
+        required: true
+        type: string
+
+jobs:
+  package_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Get version from tag or input
+        id: get_version
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION = "${{ inputs.version }}"
+          else
+            VERSION = "${{ github.ref_name }}"
+          fi
+          echo "version=$VERSION" | tee --append "$GITHUB_OUTPUT"
+        
+      - name: Pack
+        uses: $/.github/actions/build
+        with:
+          args: "--target:Pack --p:Version=${{ steps.get_version.outputs.version }}"
+          
+      - name: Get nuget api key
+        id: get_nuget_api_key
+        uses: NuGet/login@v1
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      - name: Push to nuget feed
+        run: dotnet nuget push artifacts/ProcessCommands.${{ steps.get_version.outputs.version }}.symbols.nupkg --api-key ${{ steps.get_nuget_api_key.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json

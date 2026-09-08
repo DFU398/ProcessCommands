@@ -5,6 +5,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		LICENSE = LICENSE
 		README.md = README.md
 		run-unit-tests.sh = run-unit-tests.sh
+		build.sh = build.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{43A99FDE-97D7-4FB4-A466-F72D1DC153DA}"
@@ -12,19 +13,22 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{D4E1224A-71F2-4338-B6A2-93350AD88B52}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\tests.yml = .github\workflows\tests.yml
+		.github\workflows\package.yml = .github\workflows\package.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "actions", "actions", "{A5B36051-1254-4927-8950-07F553BD9B47}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "run-unit-tests", "run-unit-tests", "{CAA6AEB9-CF40-4C29-B801-E7E6D040285A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{CAA6AEB9-CF40-4C29-B801-E7E6D040285A}"
 	ProjectSection(SolutionItems) = preProject
-		.github\actions\run-unit-tests\action.yml = .github\actions\run-unit-tests\action.yml
-		.github\actions\run-unit-tests\Dockerfile = .github\actions\run-unit-tests\Dockerfile
+		.github\actions\build\action.yml = .github\actions\build\action.yml
+		.github\actions\build\Dockerfile = .github\actions\build\Dockerfile
 	EndProjectSection
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ProcessCommands", "ProcessCommands\ProcessCommands.fsproj", "{FE8BB13E-193C-4A2A-842D-813C03463E62}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Test.ProcessCommands", "Test.ProcessCommands\Test.ProcessCommands.fsproj", "{B31A5F56-9225-45C7-8C47-11D33660CB23}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "build", "build.fsproj", "{994EAE49-530A-443E-B45D-5BD94E993BDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
